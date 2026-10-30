@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Підбір авто</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand" id="brand"></div>
+    <h1>Вкажіть параметри пошуку</h1>
+  </header>
+
+  <main class="form" id="form">
+    <div class="row">
+      <label for="condition">Стан</label>
+      <select id="condition" data-field="condition"></select>
+    </div>
+    <div class="row">
+      <label for="brand-select">Марка</label>
+      <select id="brand-select" data-field="brand"></select>
+    </div>
+    <div class="row">
+      <label for="model">Модель</label>
+      <select id="model" data-field="model"></select>
+    </div>
+    <div class="row row--pair">
+      <span class="label">Рік</span>
+      <div class="pair">
+        <div class="pair__item"><span>Від</span><select id="year_from" data-field="year_from" aria-label="Рік від"></select></div>
+        <div class="pair__item"><span>До</span><select id="year_to" data-field="year_to" aria-label="Рік до"></select></div>
+      </div>
+    </div>
+    <div class="row row--pair">
+      <span class="label">Ціна в США $</span>
+      <div class="pair">
+        <div class="pair__item"><span>Від</span><input id="price_from" data-field="price_from" type="text" inputmode="numeric" autocomplete="off" aria-label="Ціна від"></div>
+        <div class="pair__item"><span>До</span><input id="price_to" data-field="price_to" type="text" inputmode="numeric" autocomplete="off" aria-label="Ціна до"></div>
+      </div>
+    </div>
+    <div class="row">
+      <label for="body">Кузов</label>
+      <select id="body" data-field="body"></select>
+    </div>
+    <div class="row">
+      <label for="drive">Тип приводу</label>
+      <select id="drive" data-field="drive"></select>
+    </div>
+    <div class="row">
+      <label for="fuel">Тип палива</label>
+      <select id="fuel" data-field="fuel"></select>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="status">
+      <span id="count" class="count"></span>
+      <button id="reset" class="reset" type="button" hidden>Скинути</button>
+    </div>
+    <button id="submit" class="submit" type="button" disabled>Показати авто</button>
+    <div id="hint" class="hint">Оберіть стан або марку</div>
+    <div class="bot" id="bot"></div>
+  </footer>
+
+  <script src="filters.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
